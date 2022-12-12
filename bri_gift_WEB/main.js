@@ -46,7 +46,6 @@ let sickDialogueNo = document.querySelector(".buttonNo")
 
 // display on screen pet emotions 
 function deleteSituation(){//called on function hideDuplicateCat
-    console.log("delete situation called")
     petBody_inLove.style.display ="none"
     petBody_hungry.style.display ="none"
     petBody_fireworks.style.display ="none"
@@ -65,13 +64,10 @@ function general(){
     poop()
     isSick()
     isScared()
-    //isBoredSad()
-    //inLoveHappy()
     badEmotionsCleared()
 }
 //sets the pet_body
 function situation(){ // called on the food, moody, poop, cleanPoop, isSick, onclick of petBody when pet is sick, isScared, scaredGoes, isBoredSad functs 
-    console.log("situation called")
     
     if(hungry == true){
         petBody_hungry.style.display ="block"
@@ -143,13 +139,6 @@ function situation(){ // called on the food, moody, poop, cleanPoop, isSick, onc
     }else{
         petBody_scared.style.display ="none"
     }
-    
-    
-    /* there's also a problem with this, the text appears when it shouldn't  (the cat is there)
-    if((inLove ==false || inLove=== undefined) && (hungry ==false || hungry === undefined) && (fireworks==false || fireworks === undefined)  && (mad==false || mad=== undefined) && (moody==false || moody=== undefined) && (sad== false ||sad=== undefined) && (happy==false || happy=== undefined) && (bored==false ||bored=== undefined) && (sick==false || sick=== undefined) && (scared==false || scared===undefined)) {
-        petBody_went.style.display ="block"
-    }
-    */
 }
 
 /*
@@ -168,7 +157,6 @@ function hideDuplicateCats(show_this_cat){
 this function is called in giveFood instead of in food and in nightMode instead of sleep. If not when the program starts it checks the general function and from that one (because of how it's written)*/
 function badEmotionsCleared(){ // called on scaredGoes, isSick, cleanPoop and general 
     if((moody==false || moody==undefined)&&(hungry==false || hungry==undefined)&&(mad==false || mad==undefined)&&(sick==false || sick==undefined)&&(scared==false || scared==undefined)){
-        console.log("no bad emotions")
         isBoredSad()
         inLoveHappy()
     }
@@ -176,9 +164,9 @@ function badEmotionsCleared(){ // called on scaredGoes, isSick, cleanPoop and ge
 
 
 // define pet emotions 
-const birthday = new Date('12/9/2020');
+const birthday = new Date('12/14/2022');
 const today = new Date();
-let daysAlive =  6//Math.ceil((Math.abs(today - birthday)) / (1000 * 60 * 60 * 24)); 
+let daysAlive =  Math.ceil((Math.abs(today - birthday)) / (1000 * 60 * 60 * 24)); 
 console.log(daysAlive + " days");
 
 //i think this, as it's defined every time can work without the local storage
@@ -197,11 +185,8 @@ console.log(sleepCount, "loaded sleepCount")
 // BASED ON TIME 
 // 🥦 food related 
 function food(){ // called on general funct & on giveFood funct 
-    console.log(" food called")
-    //console.log(eatCount, "eatcount recived at food ")
     //daysAlive= JSON.parse(localStorage.getItem("daysAlive"))
     eatCount= JSON.parse(localStorage.getItem("eatCount"))
-    //console.log(eatCount, "eatcount recived used in food ")
    if(daysAlive>eatCount){  
         hungry = true
    } else{
@@ -210,18 +195,14 @@ function food(){ // called on general funct & on giveFood funct
    situation(hungry) //i call the situation function and send hungry value to it 
 }
 function giveFood(){ // called on click of food plate
-    console.log(" give food called")
     eatCount= a++
     localStorage.setItem("eatCount", JSON.stringify(eatCount) ) // here it is still a number but it becomes string on the extraction 
-    console.log(eatCount, "eatcount from give food ")
     food() //i call the food function
     badEmotionsCleared()
 }
 
 // 🌗 sleep related 
 function sleep(){ // called on general funct 
-    console.log(" sleep called")
-    
     //daysAlive= JSON.parse(localStorage.getItem("daysAlive"))
     sleepCount= JSON.parse(localStorage.getItem("sleepCount"))
 
@@ -230,21 +211,12 @@ function sleep(){ // called on general funct
    } else{
         moody = false
    }
-
    situation(moody) //i call the situation function and send moody value to it 
 }
-/*function giveSleep(){ // called on click of the light
-    console.log("give sleep called")
-    b++
-    localStorage.setItem("sleepCount", JSON.stringify(b)) // here it is still a number but it becomes string on the extraction 
-    sleep() //i call the sleep function
 
-    // nightMode() i call the function to change backgrond between day/night
-}
-*/
 // RANDOM EVENTS 
 //💩 poop
-let randomNumberPoop = Math.floor(Math.random()* 2) // random number from 0 to 1
+let randomNumberPoop = Math.floor(Math.random()* 3) // random number from 0 to 2
 function poop(){ // called on the general funct
     if(randomNumberPoop==0){
         petPoop.style.display = "block"
@@ -262,7 +234,7 @@ function cleanPoop(){ //called on click of the poop
 }
 
 //🤢 sick 
-let randomNumberSick = Math.floor(Math.random()* 2) // random number from 0 to 1
+let randomNumberSick = Math.floor(Math.random()* 3) // random number from 0 to 2
 function isSick(){// called on the general funct
     if(randomNumberSick==0){
         sick = true;
@@ -275,7 +247,6 @@ petBody.onclick = function(){
     if(sick==true){
         sickDialogue.style.display = "block"
         sickDialogueYes.onclick = function(){
-            console.log("give hot chocolate")
             sick = false;
             sickDialogue.style.display = "none"
             situation(sick)
@@ -288,7 +259,7 @@ petBody.onclick = function(){
 }
 
 // 👻 scared
-let randomNumberScared = Math.floor(Math.random()* 2) // random number from 0 to 1
+let randomNumberScared = Math.floor(Math.random()* 3) // random number from 0 to 2
 function isScared(){// called on the general funct
     if(randomNumberScared == 0){
         petGhosts.style.display ="block"
@@ -334,8 +305,7 @@ function scaredGoes(){ // called on each ghost onclick
 /* in functions isBoredSad and  inLoveHappy im calling the random number inside so every time the function will be called the random number will be generated and the program will be more interactive*/
 
 function isBoredSad(){ //called in the if above
-    let randomNumberBoredSad =2 //Math.floor(Math.random()* 3) // random number from 0 to 2
-    console.log("isBoredSad called ")
+    let randomNumberBoredSad = Math.floor(Math.random()* 3) // random number from 0 to 2
     if((moody==false || moody==undefined)&&(hungry==false || hungry==undefined)&&(mad==false || mad==undefined)&&(sick==false || sick==undefined)&&(scared==false || scared==undefined) && randomNumberBoredSad== 1){
         bored = true
     }else{
@@ -434,6 +404,5 @@ function setGhosts(){
 
 
 window.addEventListener("load", general(), setGhosts())
-//document.getElementsByTagName('body')[0].onclick = general();
-//window.addEventListener("click", general())
+
 //❌ localStorage.removeItem("name");  function to delete the var in local storage
