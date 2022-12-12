@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255, 238, 255);
+        color: #fd544b;
+    }
+    h1{
+        margin-top: 0;
+        padding-top: 0;
+    }
+    img{
+        width: 150px;
+        height: auto;
+    }
+</style>
+<body>
+    <div>
+        <h2>Hi bri</h2>
+        <h3>This is my gift for your 26th birthday 🍰</h3>
+        <p>I know you would love to have a cat but right now you can't. I know a virtual cat is not the same but I hope you'll like it </p>
+        <div>By the way, we have been <str id="days"></str> days together 🥳. I'm super grateful to have met you and I really hope that we'll spend the rest of our lives together </div> 
+    </div>
+    <img src="extra_elements/birthdayCat.png">
+
+    <script>
+        const meetDay = new Date('11/9/2020');
+        const date = new Date();
+        let daysTogether =  Math.ceil((Math.abs( date - meetDay)) / (1000 * 60 * 60 * 24)); 
+        
+        document.getElementById("days").innerHTML = daysTogether
+    </script>
+</body>
+</html>

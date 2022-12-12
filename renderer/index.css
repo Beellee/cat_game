@@ -1,0 +1,241 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+}
+/* 📏 image size*/
+.petBody img{
+    width: auto;
+    height: 250px;
+}
+.tv img{
+    width: auto;
+    height: 180px;
+}
+.petFood{
+    width: auto;
+    height: 80px;
+}
+.petPoop{
+    width: auto;
+    height: 50px;
+}
+.ghosts img{
+    width: auto;
+    height: 100px;
+}
+.cloud{
+    width: auto;
+    height: 170px;
+    top: 15px;
+    left: 515px;
+}
+.sun{
+    width: auto;
+    height: 200px;
+}
+.moon{
+    width: auto;
+    height: 180px;
+}
+.sickDialogue img{
+    width: auto;
+    height: 350px;
+}
+.sickDialogue .buttonYes{
+    width: auto;
+    height: 50px;
+}
+.sickDialogue .buttonNo{
+    width: auto;
+    height: 50px;
+}
+/* 🙈cat bodys*/
+.petBody_inLove{
+    display: none;
+}
+.petBody_hungry {
+    display: none;
+}
+.petBody_fireworks{
+    display: none;
+}
+.petBody_mad{
+    display: none;
+}
+.petBody_moody{
+    display: none;
+}
+.petBody_sad{
+    display: none;
+}
+.petBody_happy{
+    display: none;
+}
+.petBody_bored{
+    display: none;
+}
+.petBody_sick{
+    display: none;
+}
+.petBody_scared{
+    display: none;
+}
+.petBody_went {
+    display: none;
+}
+
+/* 🙈 cat_interactive hidden elements */
+.petPoop{
+    display: none;
+}
+.ghosts{
+    display: none;
+}
+.tvOn{
+    display: none;
+}
+.sickDialogue{
+    display: none;
+}
+/*hidden home*/
+.homeNight{
+    display: none;
+}
+.moon{
+    display: none;
+}
+/* 🎨 DISPLAY OF THE ELEMENTS IN THE BACKGROUND*/
+.petBody{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 450px;
+    left: 215px;
+    z-index: 5;
+}
+#homeBase {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+#homeBase img{
+    height: 100%;
+    width: 100%;
+}
+.homeDay.homeNight{
+    z-index: 0;
+}
+.home{
+    width: 625px;
+    height: auto;
+    z-index: 4;
+    position: absolute;
+    top: 170px;
+    left: 105px;
+}
+.tv{
+    z-index: 5;
+    position: absolute;
+    top: 480px;
+    left: 503px;
+}
+.petFood{
+    z-index: 5;
+    position: absolute;
+    top: 630px;
+    left: 395px;
+}
+.petPoop{
+    z-index: 5;
+    position: absolute;
+    top: 700px;
+    left: 195px;
+}
+.cloud{
+    z-index: 3;
+    position: absolute;
+}
+.sun{
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+.moon{
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    left: 555px;
+}
+.ghost1{
+    z-index: 6;
+    position: absolute;
+}
+.ghost2{
+    z-index: 6;
+    position: absolute;
+}
+.ghost3{
+    z-index: 6;
+    position: absolute;
+}
+.ghost4{
+    z-index: 6;
+    position: absolute;
+}
+.sickDialogue img{
+    z-index: 7;
+    position: absolute;
+    top: 300px;
+    left: 215px;
+}
+.sickDialogue .buttonYes{
+    z-index: 8;
+    position: absolute;
+    top: 550px;
+    left: 295px;
+}
+.sickDialogue .buttonNo{
+    z-index: 8;
+    position: absolute;
+    top: 550px;
+    left: 465px;
+}
+/*special mouse on hover for interactive items*/
+.buttonYes{
+    cursor: pointer;
+}
+.buttonNo{
+    cursor: pointer;
+}
+.petBody_sick{
+    cursor: pointer;
+}
+.petFood{
+    cursor: pointer;
+}
+.sun{
+    cursor: pointer;
+}
+.moon{
+    cursor: pointer;
+}
+.petPoop{
+    cursor: pointer;
+}
+.ghosts img{
+    cursor: pointer;
+}
+.tv{
+    cursor: pointer;
+}
+
+
+
+
+
